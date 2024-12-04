@@ -13,12 +13,15 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      homeConfigurations."x" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ ./home.nix ];
-        # Optionally use extraSpecialArgs to pass through arguments to home.nix
-        extraSpecialArgs = { username = "ec2-user"; };
+
+      mkHomeConfig = username: {
+        ${username} = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [ ./home.nix ];
+          extraSpecialArgs = { inherit username; };
+        };
       };
+    in {
+      homeConfigurations = mkHomeConfig "maple";
     };
 }
