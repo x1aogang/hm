@@ -91,6 +91,7 @@
     tmux
     gitmux
     sesh
+    gum
 
     fzf
     ripgrep
