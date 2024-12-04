@@ -122,10 +122,10 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
-    ".config/tmux" = {
-      source = ./config/tmux;
-      recursive = true;
-    };
+    # ".config/tmux" = {
+    #   source = ./config/tmux;
+    #   recursive = true;
+    # };
   };
 
   # Home Manager can also manage your environment variables through
