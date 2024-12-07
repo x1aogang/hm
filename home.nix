@@ -99,6 +99,7 @@
     nix-your-shell
     nodejs
     uv
+    pgcli
 
     # fine-tune a package
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
